@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MathematicLib</name>
+    </assembly>
+    <members>
+        <member name="T:MathematicLib.ExpressionHelper">
+            <summary>
+            Обработка выражений перед вычислениями
+            </summary>
+        </member>
+        <member name="M:MathematicLib.ExpressionHelper.ParseFunction(System.String)">
+            <summary>
+            Возвращает выражение, пригодное для вычисления
+            </summary>
+            <param name="text">Выражение для обработки</param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.ExpressionHelper.ProcessFuncs(System.String)">
+            <summary>
+            Обрабатывает тригонометрические функции
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.ExpressionHelper.ReplaceACos(System.String)">
+            <summary>
+            Обработка арккосинуса
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.ExpressionHelper.ReplaceCos(System.String)">
+            <summary>
+            Обработка косинуса
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.ExpressionHelper.ReplaceFExp(System.String)">
+            <summary>
+            Обработка экспоненты
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.ExpressionHelper.ReplaceExp(System.String)">
+            <summary>
+            Обработка числа E
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.ExpressionHelper.ReplaceATan(System.String)">
+            <summary>
+            Обработка арктангенса
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.ExpressionHelper.ReplaceTan(System.String)">
+            <summary>
+            Обработка тангенса
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.ExpressionHelper.ReplaceASin(System.String)">
+            <summary>
+            Обработка арксинуса
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.ExpressionHelper.ReplaceSin(System.String)">
+            <summary>
+            Обработка синуса
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MathematicLib.FormulaInvoker">
+            <summary>
+            Динамическое выполнение кода
+            </summary>
+        </member>
+        <member name="F:MathematicLib.FormulaInvoker.Invokers">
+            <summary>
+            Код для выполнения
+            </summary>
+        </member>
+        <member name="M:MathematicLib.FormulaInvoker.#ctor(System.String)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="expression">Выражение для вычисления</param>
+        </member>
+        <member name="M:MathematicLib.FormulaInvoker.Dispose">
+            <summary>
+            Освобождение ресурсов
+            </summary>
+        </member>
+        <member name="M:MathematicLib.FormulaInvoker.GetResult(System.Double)">
+            <summary>
+            Возвращает результат вычислений при X
+            </summary>
+            <param name="x">Значение X</param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.FormulaInvoker.GetCode(System.String)">
+            <summary>
+            Обработка кода перед выполнением
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MathematicLib.IMathResult`1">
+            <summary>
+            Интерфейс для вычислений
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:MathematicLib.IMathResult`1.GetResult">
+            <summary>
+            Возвращает результат вычислений
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MathematicLib.Integration.IntegrationResults">
+            <summary>
+            Результаты интегрирования
+            </summary>
+        </member>
+        <member name="P:MathematicLib.Integration.IntegrationResults.Result">
+            <summary>
+            Значение интеграла
+            </summary>
+        </member>
+        <member name="P:MathematicLib.Integration.IntegrationResults.Values">
+            <summary>
+            Таблица значений
+            </summary>
+        </member>
+        <member name="T:MathematicLib.Integration.SimpsonsIntegration">
+            <summary>
+            Нахождение определенного интеграла методом Симсона
+            </summary>
+        </member>
+        <member name="M:MathematicLib.Integration.SimpsonsIntegration.#ctor(System.String,System.Double,System.Double,System.Int32)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="expression">Подинтегральное выражение</param>
+            <param name="_a">Начало отрезка</param>
+            <param name="_b">Конкц отрезка</param>
+            <param name="_n">Количество интервалов</param>
+        </member>
+        <member name="M:MathematicLib.Integration.SimpsonsIntegration.GetResult">
+            <summary>
+            Вовращает результат вычисления и набор пар - (X;Y)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MathematicLib.Integration.TrapezoidIntegration">
+            <summary>
+            Нахождение определенного интеграла методом трапеций
+            </summary>
+        </member>
+        <member name="M:MathematicLib.Integration.TrapezoidIntegration.#ctor(System.String,System.Double,System.Double,System.Int32)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="expression">Подинтегральное выражение</param>
+            <param name="_a">Начало отрезка</param>
+            <param name="_b">Конкц отрезка</param>
+            <param name="_n">Количество интервалов</param>
+        </member>
+        <member name="M:MathematicLib.Integration.TrapezoidIntegration.GetResult">
+            <summary>
+            Вовращает результат вычисления и набор пар - (X;Y)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MathematicLib.Interpolation.LagrangesIngterpolationResults">
+            <summary>
+            Результаты вычисления полинома Лагранжа
+            </summary>
+        </member>
+        <member name="P:MathematicLib.Interpolation.LagrangesIngterpolationResults.Table">
+            <summary>
+            Таблица значений
+            </summary>
+        </member>
+        <member name="P:MathematicLib.Interpolation.LagrangesIngterpolationResults.Polinoms">
+            <summary>
+            NotSimpled - полином, Simplied - полином, где приведены подобные
+            </summary>
+        </member>
+        <member name="T:MathematicLib.Interpolation.LagrangesIngterpolation">
+            <summary>
+            Интерполяция методом Лагранжа
+            </summary>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.#ctor(System.Double[],System.Double[])">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="xValues">Массив значений X</param>
+            <param name="yValues">Массив значений Y</param>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.GetResult">
+            <summary>
+            Вычисляет интерполяционный полином
+            </summary>
+            <returns>Возвращает таблицу, полином и полином в котором приведены подобные</returns>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.GetResultWithX(System.Double)">
+            <summary>
+            Вычисляет значение при заданном X
+            </summary>
+            <param name="x">Значение X</param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.SimplifyPolinom(System.String)">
+            <summary>
+            Приводит полином к кононическому виду
+            </summary>
+            <param name="expr">Полином</param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.WithOutX(System.Int32,System.Collections.Generic.List{System.String})">
+            <summary>
+            Возвращает произведение функций без указанной
+            </summary>
+            <param name="i">Индекс функции</param>
+            <param name="funcs">Функции</param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.IsNumber(System.String)">
+            <summary>
+            Определяет, является ли параметр number числом
+            </summary>
+            <param name="number">Строка для проверки</param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.CreateMain">
+            <summary>
+            Возвращает главную диагональ таблицы
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.FillTable(System.Collections.Generic.List{System.Collections.Generic.List{System.Double}},System.Collections.Generic.List{System.Collections.Generic.List{System.Double}},System.Collections.Generic.List{System.String})">
+            <summary>
+            Возвращает заполненную таблицу
+            </summary>
+            <param name="DynamicMatrix">Значение ниже главной диагонали</param>
+            <param name="TransMatrix">Значение выше главной диагонали</param>
+            <param name="Main">Значение главной диагонали</param>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.CreateTableRows">
+            <summary>
+            Возвращает таблицу с выделенными строками
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.FillDownTriangle">
+            <summary>
+            Возвращает значения ниже главной диагонали
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.Transpored(System.Collections.Generic.List{System.Collections.Generic.List{System.Double}})">
+            <summary>
+            Возвращает транспонированную матрицу
+            </summary>
+            <param name="matrix">Матрица для транспонирования</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

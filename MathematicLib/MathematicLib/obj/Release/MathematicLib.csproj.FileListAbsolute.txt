@@ -38,3 +38,4 @@ D:\MyProjectLibrary\GIT\MathematicLib\MathematicLib\MathematicLib\bin\Release\Ma
 D:\MyProjectLibrary\GIT\MathematicLib\MathematicLib\MathematicLib\obj\Release\MathematicLib.csprojResolveAssemblyReference.cache
 D:\MyProjectLibrary\GIT\MathematicLib\MathematicLib\MathematicLib\obj\Release\MathematicLib.dll
 D:\MyProjectLibrary\GIT\MathematicLib\MathematicLib\MathematicLib\obj\Release\MathematicLib.pdb
+D:\MyProjectLibrary\GIT\MathematicLib\MathematicLib\MathematicLib\bin\Release\MathematicLib.xml
