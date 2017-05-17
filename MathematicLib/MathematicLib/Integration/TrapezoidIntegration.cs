@@ -47,7 +47,7 @@ namespace MathematicLib.Integration
         public IntegrationResults GetResult()
         {
             double h = (b - a) / n, s = 0, TEMP = a;
-            double[] x = new double[n + 1];
+            double[] x = new double[n];
             List<(double X, double Y)> Pairs = new List<(double, double)>();
             for (int i = 0; i < x.Length; i++)
             {
