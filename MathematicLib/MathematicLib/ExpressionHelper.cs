@@ -47,7 +47,7 @@ namespace MathematicLib
         private static string ReplaceCos(string text)
         {
             string pattern = @"\b(cos)";
-            string target = "Math.Сos";
+            string target = "Math.Cos";
             Regex reg = new Regex(pattern);
             text = reg.Replace(text, target);
             return text;

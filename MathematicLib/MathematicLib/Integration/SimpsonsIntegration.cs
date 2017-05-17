@@ -28,7 +28,7 @@ namespace MathematicLib.Integration
                 throw new ArgumentNullException("expression");
 
             Invoker = new FormulaInvoker(expression);
-            if (a < b)
+            if (_a < _b)
             {
                 a = _a;
                 b = _b;

@@ -80,17 +80,6 @@ namespace MathematicLib.Interpolation
             return Convert.ToDouble(invokers.GetResult(x));
         }
         /// <summary>
-        /// Вычисляет значение при заданном X
-        /// </summary>
-        /// <param name="polinom">Полином</param>
-        /// <param name="x">Значение X</param>
-        /// <returns></returns>
-        public double GetResultWithX(string polinom,double x)
-        {
-            var invokers = new FormulaInvoker(polinom);
-            return Convert.ToDouble(invokers.GetResult(x));
-        }
-        /// <summary>
         /// Приводит полином к кононическому виду
         /// </summary>
         /// <param name="expr">Полином</param>
