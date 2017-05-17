@@ -72,6 +72,7 @@
     <Compile Include="IMathResult.cs" />
     <Compile Include="Integration\IntegrationResults.cs" />
     <Compile Include="Integration\SimpsonsIntegration.cs" />
+    <Compile Include="Integration\TrapezoidIntegration.cs" />
     <Compile Include="Interpolation\LagrangesIngterpolationResults.cs" />
     <Compile Include="Interpolation\LagrangesInterpolation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
