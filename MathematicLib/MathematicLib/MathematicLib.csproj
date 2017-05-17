@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DCACA447-1DFA-4ABE-B590-D369826E27A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MathematicLib</RootNamespace>
+    <AssemblyName>MathematicLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FParsec, Version=1.0.0.0, Culture=neutral, PublicKeyToken=40ccfc0a09edbb5d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Admin\Documents\Visual Studio 2017\Projects\ConsoleApp10\ConsoleApp10\bin\Debug\FParsec.dll</HintPath>
+    </Reference>
+    <Reference Include="FParsecCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=40ccfc0a09edbb5d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Admin\Documents\Visual Studio 2017\Projects\ConsoleApp10\ConsoleApp10\bin\Debug\FParsecCS.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Admin\Documents\Visual Studio 2017\Projects\ConsoleApp10\ConsoleApp10\bin\Debug\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Admin\Documents\Visual Studio 2017\Projects\ConsoleApp10\ConsoleApp10\bin\Debug\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics.FSharp, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Admin\Documents\Visual Studio 2017\Projects\ConsoleApp10\ConsoleApp10\bin\Debug\MathNet.Numerics.FSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Symbolics, Version=0.15.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Admin\Documents\Visual Studio 2017\Projects\ConsoleApp10\ConsoleApp10\bin\Debug\MathNet.Symbolics.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.1\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExpressionHelper.cs" />
+    <Compile Include="FormulaInvoker.cs" />
+    <Compile Include="IMathResult.cs" />
+    <Compile Include="Interpolation\LagrangesIngterpolationResults.cs" />
+    <Compile Include="Interpolation\LagrangesInterpolation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
