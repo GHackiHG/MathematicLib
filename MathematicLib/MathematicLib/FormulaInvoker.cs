@@ -5,8 +5,14 @@ using System.Reflection;
 
 namespace MathematicLib
 {
-    public class FormulaInvoker
+    /// <summary>
+    /// Динамическое выполнение кода
+    /// </summary>
+    public class FormulaInvoker:IDisposable
     {
+        /// <summary>
+        /// Код для выполнения
+        /// </summary>
         private string[] Invokers;
         private CSharpCodeProvider provider = new CSharpCodeProvider();
         private CompilerParameters parameters = new CompilerParameters()
@@ -15,13 +21,33 @@ namespace MathematicLib
         };
         private CompilerResults results;
         private Type cls;
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="expression">Выражение для вычисления</param>
         public FormulaInvoker(string expression)
         {
-            Invokers = GetCode(ParseFunction(expression));
+            Invokers = GetCode(ExpressionHelper.ParseFunction(expression));
             parameters.ReferencedAssemblies.Add("System.dll");
             results = provider.CompileAssemblyFromSource(parameters, Invokers);
             cls = results.CompiledAssembly.GetType("DynamicNS.DynamicCode");
         }
+        /// <summary>
+        /// Освобождение ресурсов
+        /// </summary>
+        public void Dispose()
+        {
+            Invokers = null;
+            provider.Dispose();
+            parameters = null;
+            results = null;
+            cls = null;
+        }
+        /// <summary>
+        /// Возвращает результат вычислений при X
+        /// </summary>
+        /// <param name="x">Значение X</param>
+        /// <returns></returns>
         public string GetResult(double x)
         {
             try
@@ -33,6 +59,11 @@ namespace MathematicLib
                 return null;
             }
         }
+        /// <summary>
+        /// Обработка кода перед выполнением
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns></returns>
         private string[] GetCode(string expression)
         {
             return new string[]
@@ -50,10 +81,6 @@ namespace MathematicLib
             }
         }"
             };
-        }
-        private string ParseFunction(string text)
-        {
-            return ExpressionHelper.ProcessFuncs(text).Replace("pow", "Math.Pow").Replace("abs", "Math.Abs").Replace("ln", "Math.Log").Replace("log", "Math.Log10").Replace("sqrt", "Math.Sqrt").Replace("pi", "Math.PI");
         }
     }
 }

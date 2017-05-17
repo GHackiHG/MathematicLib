@@ -70,6 +70,8 @@
     <Compile Include="ExpressionHelper.cs" />
     <Compile Include="FormulaInvoker.cs" />
     <Compile Include="IMathResult.cs" />
+    <Compile Include="Integration\IntegrationResults.cs" />
+    <Compile Include="Integration\SimpsonsInrgration.cs" />
     <Compile Include="Interpolation\LagrangesIngterpolationResults.cs" />
     <Compile Include="Interpolation\LagrangesInterpolation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
