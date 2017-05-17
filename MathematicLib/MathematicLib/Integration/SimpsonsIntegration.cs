@@ -6,7 +6,7 @@ namespace MathematicLib.Integration
     /// <summary>
     /// Нахождение определенного интеграла методом Симсона
     /// </summary>
-    public class SimpsonsInrgration : IMathResult<IntegrationResults>
+    public class SimpsonsIntegration : IMathResult<IntegrationResults>
     {
         FormulaInvoker Invoker;
         private double a;
@@ -19,7 +19,7 @@ namespace MathematicLib.Integration
         /// <param name="_a">Начало отрезка</param>
         /// <param name="_b">Конкц отрезка</param>
         /// <param name="_n">Количество интервалов</param>
-        public SimpsonsInrgration(string expression,double _a,double _b,int _n)
+        public SimpsonsIntegration(string expression,double _a,double _b,int _n)
         {
             if(_n<=0)
                 throw new ArgumentException("N can't be equal to 0 or less then 0");
