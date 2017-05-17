@@ -8,7 +8,7 @@ namespace MathematicLib.Integration
     /// </summary>
     public class TrapezoidIntegration : IMathResult<IntegrationResults>
     {
-        FormulaInvoker Invoker;
+        private FormulaInvoker Invoker;
         private double a;
         private double b;
         private int n;
@@ -46,6 +46,7 @@ namespace MathematicLib.Integration
         /// <returns></returns>
         public IntegrationResults GetResult()
         {
+            ChangeState("Происходит вычисление");
             double h = (b - a) / n, s = 0, TEMP = a;
             double[] x = new double[n];
             List<(double X, double Y)> Pairs = new List<(double, double)>();
@@ -61,6 +62,7 @@ namespace MathematicLib.Integration
                     }
                     else
                     {
+                        ChangeState("Прозошла ошибка");
                         return new IntegrationResults { Result = 0, Values = new List<(double X, double Y)>() };
                     }
                 }
@@ -73,12 +75,26 @@ namespace MathematicLib.Integration
                     }
                     else
                     {
+                        ChangeState("Прозошла ошибка");
                         return new IntegrationResults { Result = 0, Values = new List<(double X, double Y)>() };
                     }
                 }
                 TEMP = TEMP + h;
             }
+            ChangeState("Успешно");
             return new IntegrationResults { Result = (h * s), Values = Pairs };
+        }
+        /// <summary>
+        /// Обработчик изменения статуса
+        /// </summary>
+        public StateHandler OnChangeState;
+        /// <summary>
+        /// Изменяет статус вычислений
+        /// </summary>
+        /// <param name="message"></param>
+        private void ChangeState(string message)
+        {
+            OnChangeState?.Invoke(message);
         }
     }
 }

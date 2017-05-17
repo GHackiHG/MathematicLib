@@ -46,6 +46,7 @@ namespace MathematicLib.Integration
         /// <returns></returns>
         public IntegrationResults GetResult()
         {
+            ChangeState("Происходит вычисление");
             double sum = 0;
             double h = (b - a) / n;
             double x = a + h;
@@ -60,6 +61,7 @@ namespace MathematicLib.Integration
                 }
                 else
                 {
+                    ChangeState("Прозошла ошибка");
                     return new IntegrationResults { Result = 0, Values = new List<(double X, double Y)>() };
                 }
 
@@ -71,11 +73,25 @@ namespace MathematicLib.Integration
                 }
                 else
                 {
+                    ChangeState("Прозошла ошибка");
                     return new IntegrationResults { Result = 0, Values = new List<(double X, double Y)>() };
                 }
             }
             sum = (h / 3) * (sum + Convert.ToDouble(Invoker.GetResult(x)) - Convert.ToDouble(Invoker.GetResult(x)));
+            ChangeState("Успешно");
             return new IntegrationResults { Result = sum, Values = Pairs };
+        }
+        /// <summary>
+        /// Обработчик изменения статуса
+        /// </summary>
+        public StateHandler OnChangeState;
+        /// <summary>
+        /// Изменяет статус вычислений
+        /// </summary>
+        /// <param name="message"></param>
+        private void ChangeState(string message)
+        {
+            OnChangeState?.Invoke(message);
         }
     }
 }

@@ -30,6 +30,7 @@ namespace MathematicLib.Interpolation
         /// <returns>Возвращает таблицу, полином и полином в котором приведены подобные</returns>
         public LagrangesIngterpolationResults GetResult()
         {
+            ChangeState("Происходит вычисление");
             var results = new LagrangesIngterpolationResults();
             var Main = CreateMain();
             var DynamicMatrix = FillDownTriangle();
@@ -67,6 +68,7 @@ namespace MathematicLib.Interpolation
             SumOfSums2 = SumOfSums2.Replace(',', '.');
             results.Polinoms = (NotSimpled:SumOfSums2,Simplied:SimplifyPolinom(SumOfSums2));
             results.Table = Tabl;
+            ChangeState("Успешно");
             return results;
         }
         /// <summary>
@@ -225,6 +227,18 @@ namespace MathematicLib.Interpolation
                 }
             }
             return TransMatrix;
+        }
+        /// <summary>
+        /// Обработчик изменения статуса
+        /// </summary>
+        public StateHandler OnChangeState;
+        /// <summary>
+        /// Изменяет статус вычислений
+        /// </summary>
+        /// <param name="message"></param>
+        private void ChangeState(string message)
+        {
+            OnChangeState?.Invoke(message);
         }
     }
 }
