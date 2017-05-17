@@ -46,7 +46,7 @@ namespace MathematicLib.Integration
         /// <returns></returns>
         public IntegrationResults GetResult()
         {
-            ChangeState("Происходит вычисление");
+            ChangeState("Вычисление");
             double h = (b - a) / n, s = 0, TEMP = a;
             double[] x = new double[n];
             List<(double X, double Y)> Pairs = new List<(double, double)>();

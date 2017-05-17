@@ -30,7 +30,7 @@ namespace MathematicLib.Interpolation
         /// <returns>Возвращает таблицу, полином и полином в котором приведены подобные</returns>
         public LagrangesIngterpolationResults GetResult()
         {
-            ChangeState("Происходит вычисление");
+            ChangeState("Вычисление");
             var results = new LagrangesIngterpolationResults();
             var Main = CreateMain();
             var DynamicMatrix = FillDownTriangle();

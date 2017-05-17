@@ -161,6 +161,17 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="F:MathematicLib.Integration.SimpsonsIntegration.OnChangeState">
+            <summary>
+            Обработчик изменения статуса
+            </summary>
+        </member>
+        <member name="M:MathematicLib.Integration.SimpsonsIntegration.ChangeState(System.String)">
+            <summary>
+            Изменяет статус вычислений
+            </summary>
+            <param name="message"></param>
+        </member>
         <member name="T:MathematicLib.Integration.TrapezoidIntegration">
             <summary>
             Нахождение определенного интеграла методом трапеций
@@ -180,6 +191,17 @@
             Вовращает результат вычисления и набор пар - (X;Y)
             </summary>
             <returns></returns>
+        </member>
+        <member name="F:MathematicLib.Integration.TrapezoidIntegration.OnChangeState">
+            <summary>
+            Обработчик изменения статуса
+            </summary>
+        </member>
+        <member name="M:MathematicLib.Integration.TrapezoidIntegration.ChangeState(System.String)">
+            <summary>
+            Изменяет статус вычислений
+            </summary>
+            <param name="message"></param>
         </member>
         <member name="T:MathematicLib.Interpolation.LagrangesIngterpolationResults">
             <summary>
@@ -276,6 +298,23 @@
             </summary>
             <param name="matrix">Матрица для транспонирования</param>
             <returns></returns>
+        </member>
+        <member name="F:MathematicLib.Interpolation.LagrangesIngterpolation.OnChangeState">
+            <summary>
+            Обработчик изменения статуса
+            </summary>
+        </member>
+        <member name="M:MathematicLib.Interpolation.LagrangesIngterpolation.ChangeState(System.String)">
+            <summary>
+            Изменяет статус вычислений
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:MathematicLib.StateHandler">
+            <summary>
+            Обработчик событий
+            </summary>
+            <param name="message"></param>
         </member>
     </members>
 </doc>

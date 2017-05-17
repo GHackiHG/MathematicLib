@@ -46,7 +46,7 @@ namespace MathematicLib.Integration
         /// <returns></returns>
         public IntegrationResults GetResult()
         {
-            ChangeState("Происходит вычисление");
+            ChangeState("Вычисление");
             double sum = 0;
             double h = (b - a) / n;
             double x = a + h;
